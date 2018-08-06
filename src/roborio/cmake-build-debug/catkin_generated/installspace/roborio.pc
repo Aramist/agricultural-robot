@@ -1,8 +1,0 @@
-prefix=/usr/local
-
-Name: roborio
-Description: Description of roborio
-Version: 0.0.1
-Cflags: -I/usr/local/include -I/usr/include
-Libs: -L/usr/local/lib -lroborio
-Requires: roscpp
