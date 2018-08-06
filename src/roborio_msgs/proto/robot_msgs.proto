@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option java_package = "org.usfirst.frc.team5472.robot.proto";
+
+//  Only sent from Jetson to RIO
+message DifferentialDrive {
+    string name = 3;
+    double left = 1;
+    double right = 2;
+}
+
+//  Only sent from RIO to Jetson
+message EncoderPair {
+    string name = 3;
+    sint32 left = 1;
+    sint32 right = 2;
+}
+
+//  Sent both ways. RIO sends position, Jetson sends setpoint
+message XYTable {
+    uint32 x = 1;
+    uint32 y = 2;
+}
+
+//  Only sent from RIO to Jetson
+message IMU {
+    string name = 7;
+    float rawAccelX = 1;
+    float rawAccelY = 2;
+    float rawAccelZ = 3;
+    float rawGyroX = 4;
+    float rawGyroY = 5;
+    float rawGyroZ = 6;
+}
+
+//  Only sent from RIO to Jetson
+message Joy {
+    string name = 3;
+    repeated float axes = 1;
+    repeated uint32 buttons = 2;
+}

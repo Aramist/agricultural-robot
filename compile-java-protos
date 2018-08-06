@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+protoc src/roborio_msgs/proto/robot_msgs.proto --java_out=agricultural-java/src

@@ -1,0 +1,2 @@
+set(roborio_MESSAGE_FILES "/home/aramist/agricultural-robot/src/roborio/msg/EncoderPair.msg")
+set(roborio_SERVICE_FILES "")
