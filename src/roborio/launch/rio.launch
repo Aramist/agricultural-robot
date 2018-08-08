@@ -1,0 +1,4 @@
+<launch>
+    <rosparam command="load" file="$(find roborio)/launch/topics.yaml"></rosparam>
+    <node name="roborio" pkg="roborio" type="rio"></node>
+</launch>

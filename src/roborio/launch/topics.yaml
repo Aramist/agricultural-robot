@@ -1,0 +1,12 @@
+robot:
+  params:
+    roborio_ip: 'tcp://10.54.72.2:5002'
+    lead_diffdrive: '/robot/control/lead_diffdrive'
+    trail_diffdrive: '/robot/control/trail_diffdrive'
+    xy_table: '/robot/control/xy_table'
+    joystick: '/robot/sensors/joystick'
+    lead_encoders: '/robot/sensors/lead_encoders'
+    trail_encoders: '/robot/sensors/trail_encoders'
+    xy_table_position: '/robot/sensors/xy_table_position'
+    lead_imu: '/robot/sensors/lead_imu'
+    trail_imu: '/robot/sensors/trail_imu'
