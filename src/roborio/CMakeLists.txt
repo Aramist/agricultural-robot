@@ -50,8 +50,7 @@ include_directories(
 )
 
 add_executable(
-    rio src/rio.cpp src/senders.cpp src/receivers.cpp
-)
+    rio src/rio.cpp src/senders.cpp src/receivers.cpp)
 
 target_link_libraries(
     rio ${catkin_LIBRARIES} ${zmq_LIBRARY} ${Protobuf_LIBRARIES}

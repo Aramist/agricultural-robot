@@ -1,4 +1,4 @@
 <launch>
     <rosparam command="load" file="$(find roborio)/launch/topics.yaml"></rosparam>
-    <node name="roborio" pkg="roborio" type="rio"></node>
+    <node name="roborio" pkg="roborio" type="rio" required="true"></node>
 </launch>

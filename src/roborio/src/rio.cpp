@@ -28,30 +28,36 @@ int main(int argc, char **argv) {
 
     ros::NodeHandle handle;
 
-    const std::string ROBORIO_IP;
-    const std::string DIFFDRIVE_LEAD_TOPIC;
-    const std::string DIFFDRIVE_TRAIL_TOPIC;
-    const std::string XY_TABLE_TOPIC;
-    const std::string JOYSTICK_TOPIC;
-    const std::string LEAD_ENCODERS_TOPIC;
-    const std::string TRAIL_ENCODERS_TOPIC;
-    const std::string XY_TABLE_POSITION_TOPIC;
-    const std::string TRAIL_IMU_TOPIC;
+    std::string ROBORIO_IP;
+    std::string DIFFDRIVE_LEAD_TOPIC;
+    std::string DIFFDRIVE_TRAIL_TOPIC;
+    std::string XY_TABLE_TOPIC;
+    std::string JOYSTICK_TOPIC;
+    std::string LEAD_ENCODERS_TOPIC;
+    std::string TRAIL_ENCODERS_TOPIC;
+    std::string XY_TABLE_POSITION_TOPIC;
+    std::string TRAIL_IMU_TOPIC;
 
-    handle.param("/robot/params/roborio_ip", ROBORIO_IP);
-    handle.param("/robot/params/lead_diffdrive", DIFFDRIVE_LEAD_TOPIC);
-    handle.param("/robot/params/trail_diffdrive", DIFFDRIVE_TRAIL_TOPIC);
-    handle.param("/robot/params/xy_table", XY_TABLE_TOPIC);
-    handle.param("/robot/params/joystick", JOYSTICK_TOPIC);
-    handle.param("/robot/params/lead_encoders", LEAD_ENCODERS_TOPIC);
-    handle.param("/robot/params/trail_encoders", TRAIL_ENCODERS_TOPIC);
-    handle.param("/robot/params/xy_table_position", XY_TABLE_POSITION_TOPIC);
-    handle.param("/robot/params/trail_imu", TRAIL_IMU_TOPIC);
 
+    handle.getParam("/robot/params/roborio_ip", ROBORIO_IP);
+    handle.getParam("/robot/params/lead_diffdrive", DIFFDRIVE_LEAD_TOPIC);
+    handle.getParam("/robot/params/trail_diffdrive", DIFFDRIVE_TRAIL_TOPIC);
+    handle.getParam("/robot/params/xy_table", XY_TABLE_TOPIC);
+    handle.getParam("/robot/params/joystick", JOYSTICK_TOPIC);
+    handle.getParam("/robot/params/lead_encoders", LEAD_ENCODERS_TOPIC);
+    handle.getParam("/robot/params/trail_encoders", TRAIL_ENCODERS_TOPIC);
+    handle.getParam("/robot/params/xy_table_position", XY_TABLE_POSITION_TOPIC);
+    handle.getParam("/robot/params/trail_imu", TRAIL_IMU_TOPIC);
 
     zmq::context_t context(1);
     zmq::socket_t socket(context, ZMQ_DEALER);
-    socket.connect(ROBORIO_IP);
+
+    try {
+        socket.connect(ROBORIO_IP);
+    } catch(zmq::error_t err){
+        ROS_ERROR("Failed to open connection to RoboRIO");
+        ros::shutdown();
+    }
 
     ros::Subscriber diffDriveLeadControl = handle.subscribe<DifferentialDrive>(
             DIFFDRIVE_LEAD_TOPIC,

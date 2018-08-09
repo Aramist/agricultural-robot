@@ -9,6 +9,7 @@
 
 #include "ros/ros.h"
 
+#include "sensor_msgs/Imu.h"
 #include "sensor_msgs/Joy.h"
 
 #include "google/protobuf/any.pb.h"
