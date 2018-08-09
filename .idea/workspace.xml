@@ -63,16 +63,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ded0ebc5-6022-4d1a-9b18-8f81d682f618" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/joystick_control/launch/teleop.launch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/joystick_control/src/teleoperated.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/swiftnav_ros" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/roborio/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/roborio/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/roborio/include/roborio/receivers.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/roborio/include/roborio/receivers.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/roborio/launch/rio.launch" beforeDir="false" afterPath="$PROJECT_DIR$/src/roborio/launch/rio.launch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/roborio/src/receivers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/roborio/src/receivers.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/roborio/src/rio.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/roborio/src/rio.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swiftnav_ros/launch/swiftnav_ros.launch" beforeDir="false" afterPath="$PROJECT_DIR$/src/swiftnav_ros/launch/swiftnav_ros.launch" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/src/roborio/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/src/cmake-build-debug/" />
@@ -98,48 +92,48 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="cc" value="2" />
-          <entry key="cpp" value="14" />
-          <entry key="h" value="10" />
+          <entry key="cpp" value="16" />
+          <entry key="h" value="11" />
           <entry key="hpp" value="4" />
-          <entry key="launch" value="4" />
+          <entry key="launch" value="6" />
           <entry key="log" value="3" />
           <entry key="msg" value="5" />
           <entry key="proto" value="4" />
-          <entry key="txt" value="24" />
-          <entry key="xml" value="12" />
-          <entry key="yaml" value="3" />
+          <entry key="txt" value="28" />
+          <entry key="xml" value="15" />
+          <entry key="yaml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CMakeCache.txt" value="1" />
-          <entry key="CMakeLists.txt" value="23" />
-          <entry key="ObjectiveC" value="30" />
+          <entry key="CMakeLists.txt" value="27" />
+          <entry key="ObjectiveC" value="33" />
           <entry key="PLAIN_TEXT" value="12" />
-          <entry key="XML" value="16" />
-          <entry key="YAML" value="3" />
+          <entry key="XML" value="21" />
+          <entry key="YAML" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="cc" value="12" />
-          <entry key="cpp" value="18512" />
-          <entry key="h" value="1113" />
-          <entry key="launch" value="311" />
+          <entry key="cpp" value="18777" />
+          <entry key="h" value="1423" />
+          <entry key="launch" value="565" />
           <entry key="msg" value="173" />
           <entry key="proto" value="551" />
-          <entry key="txt" value="3375" />
-          <entry key="xml" value="909" />
+          <entry key="txt" value="4004" />
+          <entry key="xml" value="1467" />
           <entry key="yaml" value="658" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CMakeLists.txt" value="3375" />
+          <entry key="CMakeLists.txt" value="4004" />
           <entry key="Doxygen file" value="4" />
-          <entry key="ObjectiveC" value="19633" />
+          <entry key="ObjectiveC" value="20208" />
           <entry key="PLAIN_TEXT" value="724" />
-          <entry key="XML" value="1220" />
+          <entry key="XML" value="2032" />
           <entry key="YAML" value="658" />
         </counts>
       </usages-collector>
@@ -182,6 +176,13 @@
         <option value="$PROJECT_DIR$/src/joystick_control/src/teleoperated.cpp" />
         <option value="$PROJECT_DIR$/src/joystick_control/launch/teleop.launch" />
         <option value="$PROJECT_DIR$/src/roborio/launch/rio.launch" />
+        <option value="$PROJECT_DIR$/src/swiftnav_ros/launch/swiftnav_ros.launch" />
+        <option value="$PROJECT_DIR$/src/camera_publisher/src/feed.cpp" />
+        <option value="$PROJECT_DIR$/src/camera_publisher/src/main.cpp" />
+        <option value="$PROJECT_DIR$/src/camera_publisher/include/camera_publisher/feed.h" />
+        <option value="$PROJECT_DIR$/src/camera_publisher/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/src/camera_publisher/package.xml" />
+        <option value="$PROJECT_DIR$/src/camera_publisher/launch/start_camera.launch" />
       </list>
     </option>
   </component>
@@ -190,6 +191,9 @@
     <option name="y" value="35" />
     <option name="width" value="2746" />
     <option name="height" value="1765" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -228,17 +232,17 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/roborio/src" />
+      <recent name="$PROJECT_DIR$/src/roborio_msgs/src" />
+      <recent name="$PROJECT_DIR$/src/roborio/include/roborio" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/roborio_msgs/src" />
       <recent name="$PROJECT_DIR$/src/roborio_msgs/include/roborio_msgs" />
       <recent name="$PROJECT_DIR$/src/roborio_msgs/src/proto" />
       <recent name="$PROJECT_DIR$/src/roborio_msgs/include/roborio_msgs/proto" />
       <recent name="$PROJECT_DIR$/src/roborio_msgs" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/roborio/src" />
-      <recent name="$PROJECT_DIR$/src/roborio_msgs/src" />
-      <recent name="$PROJECT_DIR$/src/roborio/include/roborio" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -596,12 +600,12 @@
       <workItem from="1533738257508" duration="14382000" />
       <workItem from="1533758997697" duration="599000" />
       <workItem from="1533826001835" duration="1370000" />
-      <workItem from="1533827448165" duration="4678000" />
+      <workItem from="1533827448165" duration="9365000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46954000" />
+    <option name="totallyTimeSpent" value="51641000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="134" y="35" width="2746" height="1765" extended-state="7" />
@@ -621,7 +625,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="CMake" order="11" visible="true" weight="0.31663325" />
+      <window_info anchor="bottom" id="CMake" order="11" visible="true" weight="0.31596527" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -729,13 +733,6 @@
     <entry file="file://$PROJECT_DIR$/src/roborio/cmake-build-debug/CMakeCache.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/roborio/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="52" column="53" selection-start-line="52" selection-start-column="53" selection-end-line="52" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/joystick_control/src/teleoperated.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="701">
@@ -757,13 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/joystick_control/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/roborio/launch/rio.launch">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
@@ -782,6 +772,75 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
           <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/swiftnav_ros/config/swiftnav_ros_diag.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/swiftnav_ros/launch/swiftnav_ros.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/roborio/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="52" column="53" selection-start-line="52" selection-start-column="53" selection-end-line="52" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/swiftnav_ros/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/joystick_control/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/camera_publisher/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/camera_publisher/src/feed.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/camera_publisher/include/camera_publisher/feed.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/camera_publisher/package.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/camera_publisher/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/camera_publisher/launch/start_camera.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
         </state>
       </provider>
     </entry>
