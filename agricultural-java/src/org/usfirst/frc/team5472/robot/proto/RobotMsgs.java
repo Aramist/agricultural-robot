@@ -15,7 +15,7 @@ public final class RobotMsgs {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface DifferentialDriveOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:DifferentialDrive)
+      // @@protoc_insertion_point(interface_extends:proto.DifferentialDrive)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -43,11 +43,11 @@ public final class RobotMsgs {
    *  Only sent from Jetson to RIO
    * </pre>
    *
-   * Protobuf type {@code DifferentialDrive}
+   * Protobuf type {@code proto.DifferentialDrive}
    */
   public  static final class DifferentialDrive extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:DifferentialDrive)
+      // @@protoc_insertion_point(message_implements:proto.DifferentialDrive)
       DifferentialDriveOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use DifferentialDrive.newBuilder() to construct.
@@ -121,13 +121,13 @@ public final class RobotMsgs {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_DifferentialDrive_descriptor;
+      return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_DifferentialDrive_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_DifferentialDrive_fieldAccessorTable
+      return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_DifferentialDrive_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               org.usfirst.frc.team5472.robot.proto.RobotMsgs.DifferentialDrive.class, org.usfirst.frc.team5472.robot.proto.RobotMsgs.DifferentialDrive.Builder.class);
     }
@@ -372,21 +372,21 @@ public final class RobotMsgs {
      *  Only sent from Jetson to RIO
      * </pre>
      *
-     * Protobuf type {@code DifferentialDrive}
+     * Protobuf type {@code proto.DifferentialDrive}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:DifferentialDrive)
+        // @@protoc_insertion_point(builder_implements:proto.DifferentialDrive)
         org.usfirst.frc.team5472.robot.proto.RobotMsgs.DifferentialDriveOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_DifferentialDrive_descriptor;
+        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_DifferentialDrive_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_DifferentialDrive_fieldAccessorTable
+        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_DifferentialDrive_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 org.usfirst.frc.team5472.robot.proto.RobotMsgs.DifferentialDrive.class, org.usfirst.frc.team5472.robot.proto.RobotMsgs.DifferentialDrive.Builder.class);
       }
@@ -421,7 +421,7 @@ public final class RobotMsgs {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_DifferentialDrive_descriptor;
+        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_DifferentialDrive_descriptor;
       }
 
       @java.lang.Override
@@ -450,35 +450,35 @@ public final class RobotMsgs {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -664,10 +664,10 @@ public final class RobotMsgs {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:DifferentialDrive)
+      // @@protoc_insertion_point(builder_scope:proto.DifferentialDrive)
     }
 
-    // @@protoc_insertion_point(class_scope:DifferentialDrive)
+    // @@protoc_insertion_point(class_scope:proto.DifferentialDrive)
     private static final org.usfirst.frc.team5472.robot.proto.RobotMsgs.DifferentialDrive DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new org.usfirst.frc.team5472.robot.proto.RobotMsgs.DifferentialDrive();
@@ -705,7 +705,7 @@ public final class RobotMsgs {
   }
 
   public interface EncoderPairOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:EncoderPair)
+      // @@protoc_insertion_point(interface_extends:proto.EncoderPair)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -733,11 +733,11 @@ public final class RobotMsgs {
    *  Only sent from RIO to Jetson
    * </pre>
    *
-   * Protobuf type {@code EncoderPair}
+   * Protobuf type {@code proto.EncoderPair}
    */
   public  static final class EncoderPair extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:EncoderPair)
+      // @@protoc_insertion_point(message_implements:proto.EncoderPair)
       EncoderPairOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use EncoderPair.newBuilder() to construct.
@@ -811,13 +811,13 @@ public final class RobotMsgs {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_EncoderPair_descriptor;
+      return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_EncoderPair_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_EncoderPair_fieldAccessorTable
+      return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_EncoderPair_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               org.usfirst.frc.team5472.robot.proto.RobotMsgs.EncoderPair.class, org.usfirst.frc.team5472.robot.proto.RobotMsgs.EncoderPair.Builder.class);
     }
@@ -1056,21 +1056,21 @@ public final class RobotMsgs {
      *  Only sent from RIO to Jetson
      * </pre>
      *
-     * Protobuf type {@code EncoderPair}
+     * Protobuf type {@code proto.EncoderPair}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:EncoderPair)
+        // @@protoc_insertion_point(builder_implements:proto.EncoderPair)
         org.usfirst.frc.team5472.robot.proto.RobotMsgs.EncoderPairOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_EncoderPair_descriptor;
+        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_EncoderPair_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_EncoderPair_fieldAccessorTable
+        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_EncoderPair_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 org.usfirst.frc.team5472.robot.proto.RobotMsgs.EncoderPair.class, org.usfirst.frc.team5472.robot.proto.RobotMsgs.EncoderPair.Builder.class);
       }
@@ -1105,7 +1105,7 @@ public final class RobotMsgs {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_EncoderPair_descriptor;
+        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_EncoderPair_descriptor;
       }
 
       @java.lang.Override
@@ -1134,35 +1134,35 @@ public final class RobotMsgs {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1348,10 +1348,10 @@ public final class RobotMsgs {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:EncoderPair)
+      // @@protoc_insertion_point(builder_scope:proto.EncoderPair)
     }
 
-    // @@protoc_insertion_point(class_scope:EncoderPair)
+    // @@protoc_insertion_point(class_scope:proto.EncoderPair)
     private static final org.usfirst.frc.team5472.robot.proto.RobotMsgs.EncoderPair DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new org.usfirst.frc.team5472.robot.proto.RobotMsgs.EncoderPair();
@@ -1389,7 +1389,7 @@ public final class RobotMsgs {
   }
 
   public interface XYTableOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:XYTable)
+      // @@protoc_insertion_point(interface_extends:proto.XYTable)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1407,11 +1407,11 @@ public final class RobotMsgs {
    *  Sent both ways. RIO sends position, Jetson sends setpoint
    * </pre>
    *
-   * Protobuf type {@code XYTable}
+   * Protobuf type {@code proto.XYTable}
    */
   public  static final class XYTable extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:XYTable)
+      // @@protoc_insertion_point(message_implements:proto.XYTable)
       XYTableOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use XYTable.newBuilder() to construct.
@@ -1478,13 +1478,13 @@ public final class RobotMsgs {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_XYTable_descriptor;
+      return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_XYTable_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_XYTable_fieldAccessorTable
+      return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_XYTable_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               org.usfirst.frc.team5472.robot.proto.RobotMsgs.XYTable.class, org.usfirst.frc.team5472.robot.proto.RobotMsgs.XYTable.Builder.class);
     }
@@ -1679,21 +1679,21 @@ public final class RobotMsgs {
      *  Sent both ways. RIO sends position, Jetson sends setpoint
      * </pre>
      *
-     * Protobuf type {@code XYTable}
+     * Protobuf type {@code proto.XYTable}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:XYTable)
+        // @@protoc_insertion_point(builder_implements:proto.XYTable)
         org.usfirst.frc.team5472.robot.proto.RobotMsgs.XYTableOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_XYTable_descriptor;
+        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_XYTable_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_XYTable_fieldAccessorTable
+        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_XYTable_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 org.usfirst.frc.team5472.robot.proto.RobotMsgs.XYTable.class, org.usfirst.frc.team5472.robot.proto.RobotMsgs.XYTable.Builder.class);
       }
@@ -1726,7 +1726,7 @@ public final class RobotMsgs {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_XYTable_descriptor;
+        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_XYTable_descriptor;
       }
 
       @java.lang.Override
@@ -1754,35 +1754,35 @@ public final class RobotMsgs {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1895,10 +1895,10 @@ public final class RobotMsgs {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:XYTable)
+      // @@protoc_insertion_point(builder_scope:proto.XYTable)
     }
 
-    // @@protoc_insertion_point(class_scope:XYTable)
+    // @@protoc_insertion_point(class_scope:proto.XYTable)
     private static final org.usfirst.frc.team5472.robot.proto.RobotMsgs.XYTable DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new org.usfirst.frc.team5472.robot.proto.RobotMsgs.XYTable();
@@ -1936,7 +1936,7 @@ public final class RobotMsgs {
   }
 
   public interface IMUOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:IMU)
+      // @@protoc_insertion_point(interface_extends:proto.IMU)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1984,11 +1984,11 @@ public final class RobotMsgs {
    *  Only sent from RIO to Jetson
    * </pre>
    *
-   * Protobuf type {@code IMU}
+   * Protobuf type {@code proto.IMU}
    */
   public  static final class IMU extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:IMU)
+      // @@protoc_insertion_point(message_implements:proto.IMU)
       IMUOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use IMU.newBuilder() to construct.
@@ -2086,13 +2086,13 @@ public final class RobotMsgs {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_IMU_descriptor;
+      return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_IMU_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_IMU_fieldAccessorTable
+      return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_IMU_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               org.usfirst.frc.team5472.robot.proto.RobotMsgs.IMU.class, org.usfirst.frc.team5472.robot.proto.RobotMsgs.IMU.Builder.class);
     }
@@ -2429,21 +2429,21 @@ public final class RobotMsgs {
      *  Only sent from RIO to Jetson
      * </pre>
      *
-     * Protobuf type {@code IMU}
+     * Protobuf type {@code proto.IMU}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:IMU)
+        // @@protoc_insertion_point(builder_implements:proto.IMU)
         org.usfirst.frc.team5472.robot.proto.RobotMsgs.IMUOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_IMU_descriptor;
+        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_IMU_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_IMU_fieldAccessorTable
+        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_IMU_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 org.usfirst.frc.team5472.robot.proto.RobotMsgs.IMU.class, org.usfirst.frc.team5472.robot.proto.RobotMsgs.IMU.Builder.class);
       }
@@ -2486,7 +2486,7 @@ public final class RobotMsgs {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_IMU_descriptor;
+        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_IMU_descriptor;
       }
 
       @java.lang.Override
@@ -2519,35 +2519,35 @@ public final class RobotMsgs {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2849,10 +2849,10 @@ public final class RobotMsgs {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:IMU)
+      // @@protoc_insertion_point(builder_scope:proto.IMU)
     }
 
-    // @@protoc_insertion_point(class_scope:IMU)
+    // @@protoc_insertion_point(class_scope:proto.IMU)
     private static final org.usfirst.frc.team5472.robot.proto.RobotMsgs.IMU DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new org.usfirst.frc.team5472.robot.proto.RobotMsgs.IMU();
@@ -2890,7 +2890,7 @@ public final class RobotMsgs {
   }
 
   public interface JoyOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:Joy)
+      // @@protoc_insertion_point(interface_extends:proto.Joy)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2934,11 +2934,11 @@ public final class RobotMsgs {
    *  Only sent from RIO to Jetson
    * </pre>
    *
-   * Protobuf type {@code Joy}
+   * Protobuf type {@code proto.Joy}
    */
   public  static final class Joy extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:Joy)
+      // @@protoc_insertion_point(message_implements:proto.Joy)
       JoyOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Joy.newBuilder() to construct.
@@ -3050,13 +3050,13 @@ public final class RobotMsgs {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_Joy_descriptor;
+      return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_Joy_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_Joy_fieldAccessorTable
+      return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_Joy_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               org.usfirst.frc.team5472.robot.proto.RobotMsgs.Joy.class, org.usfirst.frc.team5472.robot.proto.RobotMsgs.Joy.Builder.class);
     }
@@ -3354,21 +3354,21 @@ public final class RobotMsgs {
      *  Only sent from RIO to Jetson
      * </pre>
      *
-     * Protobuf type {@code Joy}
+     * Protobuf type {@code proto.Joy}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:Joy)
+        // @@protoc_insertion_point(builder_implements:proto.Joy)
         org.usfirst.frc.team5472.robot.proto.RobotMsgs.JoyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_Joy_descriptor;
+        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_Joy_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_Joy_fieldAccessorTable
+        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_Joy_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 org.usfirst.frc.team5472.robot.proto.RobotMsgs.Joy.class, org.usfirst.frc.team5472.robot.proto.RobotMsgs.Joy.Builder.class);
       }
@@ -3403,7 +3403,7 @@ public final class RobotMsgs {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_Joy_descriptor;
+        return org.usfirst.frc.team5472.robot.proto.RobotMsgs.internal_static_proto_Joy_descriptor;
       }
 
       @java.lang.Override
@@ -3443,35 +3443,35 @@ public final class RobotMsgs {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -3752,10 +3752,10 @@ public final class RobotMsgs {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:Joy)
+      // @@protoc_insertion_point(builder_scope:proto.Joy)
     }
 
-    // @@protoc_insertion_point(class_scope:Joy)
+    // @@protoc_insertion_point(class_scope:proto.Joy)
     private static final org.usfirst.frc.team5472.robot.proto.RobotMsgs.Joy DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new org.usfirst.frc.team5472.robot.proto.RobotMsgs.Joy();
@@ -3793,30 +3793,30 @@ public final class RobotMsgs {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_DifferentialDrive_descriptor;
+    internal_static_proto_DifferentialDrive_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_DifferentialDrive_fieldAccessorTable;
+      internal_static_proto_DifferentialDrive_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_EncoderPair_descriptor;
+    internal_static_proto_EncoderPair_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_EncoderPair_fieldAccessorTable;
+      internal_static_proto_EncoderPair_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_XYTable_descriptor;
+    internal_static_proto_XYTable_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_XYTable_fieldAccessorTable;
+      internal_static_proto_XYTable_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_IMU_descriptor;
+    internal_static_proto_IMU_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_IMU_fieldAccessorTable;
+      internal_static_proto_IMU_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Joy_descriptor;
+    internal_static_proto_Joy_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Joy_fieldAccessorTable;
+      internal_static_proto_Joy_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3827,16 +3827,16 @@ public final class RobotMsgs {
   static {
     java.lang.String[] descriptorData = {
       "\n\'src/roborio_msgs/proto/robot_msgs.prot" +
-      "o\">\n\021DifferentialDrive\022\014\n\004name\030\003 \001(\t\022\014\n\004" +
-      "left\030\001 \001(\001\022\r\n\005right\030\002 \001(\001\"8\n\013EncoderPair" +
-      "\022\014\n\004name\030\003 \001(\t\022\014\n\004left\030\001 \001(\021\022\r\n\005right\030\002 " +
-      "\001(\021\"\037\n\007XYTable\022\t\n\001x\030\001 \001(\r\022\t\n\001y\030\002 \001(\r\"\202\001\n" +
-      "\003IMU\022\014\n\004name\030\007 \001(\t\022\021\n\trawAccelX\030\001 \001(\002\022\021\n" +
-      "\trawAccelY\030\002 \001(\002\022\021\n\trawAccelZ\030\003 \001(\002\022\020\n\010r" +
-      "awGyroX\030\004 \001(\002\022\020\n\010rawGyroY\030\005 \001(\002\022\020\n\010rawGy" +
-      "roZ\030\006 \001(\002\"2\n\003Joy\022\014\n\004name\030\003 \001(\t\022\014\n\004axes\030\001" +
-      " \003(\002\022\017\n\007buttons\030\002 \003(\rB&\n$org.usfirst.frc" +
-      ".team5472.robot.protob\006proto3"
+      "o\022\005proto\">\n\021DifferentialDrive\022\014\n\004name\030\003 " +
+      "\001(\t\022\014\n\004left\030\001 \001(\001\022\r\n\005right\030\002 \001(\001\"8\n\013Enco" +
+      "derPair\022\014\n\004name\030\003 \001(\t\022\014\n\004left\030\001 \001(\021\022\r\n\005r" +
+      "ight\030\002 \001(\021\"\037\n\007XYTable\022\t\n\001x\030\001 \001(\r\022\t\n\001y\030\002 " +
+      "\001(\r\"\202\001\n\003IMU\022\014\n\004name\030\007 \001(\t\022\021\n\trawAccelX\030\001" +
+      " \001(\002\022\021\n\trawAccelY\030\002 \001(\002\022\021\n\trawAccelZ\030\003 \001" +
+      "(\002\022\020\n\010rawGyroX\030\004 \001(\002\022\020\n\010rawGyroY\030\005 \001(\002\022\020" +
+      "\n\010rawGyroZ\030\006 \001(\002\"2\n\003Joy\022\014\n\004name\030\003 \001(\t\022\014\n" +
+      "\004axes\030\001 \003(\002\022\017\n\007buttons\030\002 \003(\rB&\n$org.usfi" +
+      "rst.frc.team5472.robot.protob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3850,35 +3850,35 @@ public final class RobotMsgs {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_DifferentialDrive_descriptor =
+    internal_static_proto_DifferentialDrive_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_DifferentialDrive_fieldAccessorTable = new
+    internal_static_proto_DifferentialDrive_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_DifferentialDrive_descriptor,
+        internal_static_proto_DifferentialDrive_descriptor,
         new java.lang.String[] { "Name", "Left", "Right", });
-    internal_static_EncoderPair_descriptor =
+    internal_static_proto_EncoderPair_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_EncoderPair_fieldAccessorTable = new
+    internal_static_proto_EncoderPair_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_EncoderPair_descriptor,
+        internal_static_proto_EncoderPair_descriptor,
         new java.lang.String[] { "Name", "Left", "Right", });
-    internal_static_XYTable_descriptor =
+    internal_static_proto_XYTable_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_XYTable_fieldAccessorTable = new
+    internal_static_proto_XYTable_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_XYTable_descriptor,
+        internal_static_proto_XYTable_descriptor,
         new java.lang.String[] { "X", "Y", });
-    internal_static_IMU_descriptor =
+    internal_static_proto_IMU_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_IMU_fieldAccessorTable = new
+    internal_static_proto_IMU_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_IMU_descriptor,
+        internal_static_proto_IMU_descriptor,
         new java.lang.String[] { "Name", "RawAccelX", "RawAccelY", "RawAccelZ", "RawGyroX", "RawGyroY", "RawGyroZ", });
-    internal_static_Joy_descriptor =
+    internal_static_proto_Joy_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_Joy_fieldAccessorTable = new
+    internal_static_proto_Joy_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Joy_descriptor,
+        internal_static_proto_Joy_descriptor,
         new java.lang.String[] { "Name", "Axes", "Buttons", });
   }
 

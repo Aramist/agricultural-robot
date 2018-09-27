@@ -1,6 +1,6 @@
 robot:
   params:
-    roborio_ip: 'tcp://10.54.72.2:5002'
+    roborio_ip: 'tcp://10.54.72.2:5556'
     lead_diffdrive: '/robot/control/lead_diffdrive'
     trail_diffdrive: '/robot/control/trail_diffdrive'
     xy_table: '/robot/control/xy_table'

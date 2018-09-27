@@ -5,8 +5,10 @@
 #include "roborio/receivers.h"
 
 
+using namespace google::protobuf;
+
 namespace receivers {
-    void interpretJoystickMsg(const proto::Joy &msg, const std::map <std::string, ros::Publisher> &lookup) {
+    void interpretJoystickMsg(const proto::Joy &msg, const std::map<std::string, ros::Publisher> &lookup) {
         sensor_msgs::Joy joystick;
         joystick.header.frame_id = "";
         joystick.header.stamp = ros::Time::now();
@@ -21,7 +23,7 @@ namespace receivers {
     }
 
     void interpretEncoderMsg(const proto::EncoderPair &encoderMsg,
-                             const std::map <std::string, ros::Publisher> &lookup) {
+                             const std::map<std::string, ros::Publisher> &lookup) {
         roborio_msgs::EncoderPair pair;
         pair.left = encoderMsg.left();
         pair.right = encoderMsg.right();
@@ -34,7 +36,7 @@ namespace receivers {
     }
 
     void interpretXYTableMsg(const proto::XYTable &tableMsg,
-                             const std::map <std::string, ros::Publisher> &lookup) {
+                             const std::map<std::string, ros::Publisher> &lookup) {
         roborio_msgs::XYTable table;
         table.x = tableMsg.x();
         table.y = tableMsg.y();
@@ -42,7 +44,7 @@ namespace receivers {
     }
 
     void interpretIMUMsg(const proto::IMU &imuMsg,
-                         const std::map <std::string, ros::Publisher> &lookup) {
+                         const std::map<std::string, ros::Publisher> &lookup) {
         sensor_msgs::Imu imu;
 
         imu.header.frame_id = "";
@@ -60,22 +62,28 @@ namespace receivers {
         lookup.at("trail_imu").publish(imu);
     }
 
-    void interpretIncomingMsg(const google::protobuf::Any &msg, const std::map <std::string, ros::Publisher> &lookup) {
-        if (msg.Is<proto::Joy>()) {
+    void interpretIncomingMsg(std::shared_ptr<Any> msg, const std::map<std::string, ros::Publisher> &lookup) {
+        ROS_WARN("Interpreting");
+        if (msg->Is<proto::Joy>()) {
+            ROS_WARN("Joystick");
             proto::Joy joyMsg;
-            msg.UnpackTo(&joyMsg);
+            msg->UnpackTo(&joyMsg);
             interpretJoystickMsg(joyMsg, lookup);
-        } else if (msg.Is<proto::EncoderPair>()) {
+        } else if (msg->Is<proto::EncoderPair>()) {
+            ROS_WARN("encoder");
             proto::EncoderPair encMsg;
-            msg.UnpackTo(&encMsg);
+            msg->UnpackTo(&encMsg);
             interpretEncoderMsg(encMsg, lookup);
-        } else if (msg.Is<proto::XYTable>()) {
+        } else if (msg->Is<proto::XYTable>()) {
+            ROS_WARN("xy");
             proto::XYTable tableMsg;
-            msg.UnpackTo(&tableMsg);
+            msg->UnpackTo(&tableMsg);
             interpretXYTableMsg(tableMsg, lookup);
-        } else if (msg.Is<proto::IMU>()) {
+//        } else if (msg->Is<proto::IMU>()) {
+        } else {
+            ROS_WARN("IMU");
             proto::IMU imuMsg;
-            msg.UnpackTo(&imuMsg);
+            msg->UnpackTo(&imuMsg);
             interpretIMUMsg(imuMsg, lookup);
         }
     }

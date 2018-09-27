@@ -27,7 +27,7 @@ namespace receivers {
 
     void interpretIMUMsg(const proto::IMU &imuMsg);
 
-    void interpretIncomingMsg(const google::protobuf::Any &msg, const std::map<std::string, ros::Publisher> &lookup);
+    void interpretIncomingMsg(std::shared_ptr<google::protobuf::Any> msg, const std::map<std::string, ros::Publisher> &lookup);
 }
 
 #endif //ROBORIO_RECEIVERS_H
