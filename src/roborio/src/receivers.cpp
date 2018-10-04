@@ -5,27 +5,29 @@
 #include "roborio/receivers.h"
 
 
+using json = nlohmann::json;
+
 namespace receivers {
-    void interpretJoystickMsg(const proto::Joy &msg, const std::map <std::string, ros::Publisher> &lookup) {
+    void interpretJoystickMsg(const json &msg, const std::map<std::string, ros::Publisher> &lookup) {
         sensor_msgs::Joy joystick;
         joystick.header.frame_id = "";
         joystick.header.stamp = ros::Time::now();
 
-        for (const auto &axis : msg.axes())
+        for (const auto &axis : msg["axes"])
             joystick.axes.push_back(axis);
 
-        for (const auto &button : msg.buttons())
+        for (const auto &button : msg["buttons"])
             joystick.buttons.push_back(button);
 
         lookup.at("joystick").publish(joystick);
     }
 
-    void interpretEncoderMsg(const proto::EncoderPair &encoderMsg,
-                             const std::map <std::string, ros::Publisher> &lookup) {
+    void interpretEncoderMsg(const json &encoderMsg,
+                             const std::map<std::string, ros::Publisher> &lookup) {
         roborio_msgs::EncoderPair pair;
-        pair.left = encoderMsg.left();
-        pair.right = encoderMsg.right();
-        const std::string frame = encoderMsg.name();
+        pair.left = encoderMsg["left"];
+        pair.right = encoderMsg["right"];
+        const std::string frame = encoderMsg["name"];
         const std::string front("lead");
         if (frame == front)
             lookup.at("lead_encoder").publish(pair);
@@ -33,16 +35,16 @@ namespace receivers {
             lookup.at("trail_encoder").publish(pair);
     }
 
-    void interpretXYTableMsg(const proto::XYTable &tableMsg,
-                             const std::map <std::string, ros::Publisher> &lookup) {
+    void interpretXYTableMsg(const json &tableMsg,
+                             const std::map<std::string, ros::Publisher> &lookup) {
         roborio_msgs::XYTable table;
-        table.x = tableMsg.x();
-        table.y = tableMsg.y();
+        table.x = tableMsg["x"];
+        table.y = tableMsg["y"];
         lookup.at("xy_position").publish(table);
     }
 
-    void interpretIMUMsg(const proto::IMU &imuMsg,
-                         const std::map <std::string, ros::Publisher> &lookup) {
+    void interpretIMUMsg(const json &imuMsg,
+                         const std::map<std::string, ros::Publisher> &lookup) {
         sensor_msgs::Imu imu;
 
         imu.header.frame_id = "";
@@ -51,32 +53,18 @@ namespace receivers {
         imu.orientation_covariance[0] = -1;
         imu.angular_velocity_covariance[0] = -1;
         imu.linear_acceleration_covariance[0] = -1;
-        imu.angular_velocity.x = imuMsg.rawgyrox();
-        imu.angular_velocity.y = imuMsg.rawgyroy();
-        imu.angular_velocity.z = imuMsg.rawgyroz();
-        imu.linear_acceleration.x = imuMsg.rawaccelx();
-        imu.linear_acceleration.y = imuMsg.rawaccely();
-        imu.linear_acceleration.z = imuMsg.rawaccelz();
+        imu.angular_velocity.x = imuMsg["gyro_x"];
+        imu.angular_velocity.y = imuMsg["gyro_y"];
+        imu.angular_velocity.z = imuMsg["gyro_z"];
+        imu.linear_acceleration.x = imuMsg["accel_x"];
+        imu.linear_acceleration.y = imuMsg["accel_y"];
+        imu.linear_acceleration.z = imuMsg["accel_z"];
         lookup.at("trail_imu").publish(imu);
     }
 
-    void interpretIncomingMsg(const google::protobuf::Any &msg, const std::map <std::string, ros::Publisher> &lookup) {
-        if (msg.Is<proto::Joy>()) {
-            proto::Joy joyMsg;
-            msg.UnpackTo(&joyMsg);
-            interpretJoystickMsg(joyMsg, lookup);
-        } else if (msg.Is<proto::EncoderPair>()) {
-            proto::EncoderPair encMsg;
-            msg.UnpackTo(&encMsg);
-            interpretEncoderMsg(encMsg, lookup);
-        } else if (msg.Is<proto::XYTable>()) {
-            proto::XYTable tableMsg;
-            msg.UnpackTo(&tableMsg);
-            interpretXYTableMsg(tableMsg, lookup);
-        } else if (msg.Is<proto::IMU>()) {
-            proto::IMU imuMsg;
-            msg.UnpackTo(&imuMsg);
-            interpretIMUMsg(imuMsg, lookup);
+    void interpretIncomingMsg(const json &msg, const std::map<std::string, ros::Publisher> &lookup) {
+        if (msg["name"] == "trail_imu") {
+            interpretIMUMsg(msg, lookup);
         }
     }
 }

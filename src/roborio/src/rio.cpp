@@ -4,7 +4,6 @@
  */
 
 #include <boost/bind.hpp>
-#include <google/protobuf/any.pb.h>
 #include <zmq.hpp>
 
 #include "ros/ros.h"
@@ -17,10 +16,13 @@
 #include "roborio_msgs/EncoderPair.h"
 #include "roborio_msgs/XYTable.h"
 
+#include "roborio/json.hpp"
 #include "roborio/senders.h"
 #include "roborio/receivers.h"
 
+
 using namespace roborio_msgs;
+using json = nlohmann::json;
 
 
 int main(int argc, char **argv) {
@@ -50,7 +52,7 @@ int main(int argc, char **argv) {
     handle.getParam("/robot/params/trail_imu", TRAIL_IMU_TOPIC);
 
     zmq::context_t context(1);
-    zmq::socket_t socket(context, ZMQ_DEALER);
+    zmq::socket_t socket(context, ZMQ_PAIR);
 
     try {
         socket.connect(ROBORIO_IP);
@@ -124,10 +126,10 @@ int main(int argc, char **argv) {
 
     while (ros::ok()) {
         ros::spinOnce();
-//        zmq::message_t received;
-//        socket.recv(&received);
-//        std::string serializedJSON{reinterpret_cast<const char *>(received.data())};
-//        const json toJSON{serializedJSON};
-//        interpretJsonMsg(toJSON, publisherLookup);
+        zmq::message_t received;
+        socket.recv(&received);
+        std::string serializedJSON(static_cast<char *>(received.data()), received.size());
+        const auto toJSON = json::parse(serializedJSON);
+        receivers::interpretIncomingMsg(toJSON, publisherLookup);
     }
 }

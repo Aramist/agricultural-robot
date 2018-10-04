@@ -3,52 +3,58 @@
 //
 
 #include "roborio/senders.h"
+#include "roborio/json.hpp"
 
 
 using namespace roborio_msgs;
+using namespace nlohmann;
 
 namespace senders {
-    void sendDiffDriveLead(const DifferentialDrive::ConstPtr &msg, zmq::socket_t *sock) {
-        proto::DifferentialDrive message;
-        message.set_left(msg->left);
-        message.set_right(msg->right);
-        const std::string frame{"lead"};
-        message.set_name(frame);
+    json sendDiffDriveLead(const DifferentialDrive::ConstPtr &msg, zmq::socket_t *sock) {
+        json message;
+        message["left"] = msg->left;
+        message["right"] = msg->right;
+        message["name"] = "lead_drive";
 
-        std::string contents;
-        message.SerializeToString(&contents);
+        std::string contents = message.dump();
 
         zmq::message_t socketMessage(contents.size());
         memcpy(socketMessage.data(), contents.c_str(), sizeof(contents.c_str()));
         sock->send(socketMessage);
+
+        return message;
     }
 
-    void sendDiffDriveTrail(const DifferentialDrive::ConstPtr &msg, zmq::socket_t *sock) {
-        proto::DifferentialDrive message;
-        message.set_left(msg->left);
-        message.set_right(msg->right);
-        const std::string frame{"trail"};
-        message.set_name(frame);
+    json sendDiffDriveTrail(const DifferentialDrive::ConstPtr &msg, zmq::socket_t *sock) {
+        json message;
 
-        std::string contents;
-        message.SerializeToString(&contents);
+        message["left"] = msg->left;
+        message["right"] = msg->right;
+        message["name"] = "trail_drive";
+
+        std::string contents = message.dump();
 
         zmq::message_t socketMessage(contents.size());
         memcpy(socketMessage.data(), contents.c_str(), sizeof(contents.c_str()));
         sock->send(socketMessage);
+
+        return message;
     }
 
-    void sendXYTable(const XYTable::ConstPtr &msg, zmq::socket_t *sock) {
-        proto::XYTable message;
-        message.set_x(msg->x);
-        message.set_y(msg->y);
+    json sendXYTable(const XYTable::ConstPtr &msg, zmq::socket_t *sock) {
+        json message;
 
-        std::string contents;
-        message.SerializeToString(&contents);
+        message["name"] = "table";
+        message["x"] = msg->x;
+        message["y"] = msg->y;
+
+        std::string contents = message.dump();
 
         zmq::message_t socketMessage(contents.size());
         memcpy(socketMessage.data(), contents.c_str(), sizeof(contents.c_str()));
         sock->send(socketMessage);
+
+        return message;
     }
 }
 

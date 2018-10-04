@@ -12,22 +12,21 @@
 #include "sensor_msgs/Imu.h"
 #include "sensor_msgs/Joy.h"
 
-#include "google/protobuf/any.pb.h"
-#include "roborio_msgs/robot_msgs.pb.h"
+#include "roborio/json.hpp"
 
 #include "roborio_msgs/EncoderPair.h"
 #include "roborio_msgs/XYTable.h"
 
 namespace receivers {
-    void interpretJoystickMsg(const proto::Joy &msg, const std::map<std::string, ros::Publisher> &lookup);
+    void interpretJoystickMsg(const nlohmann::json &msg, const std::map<std::string, ros::Publisher> &lookup);
 
-    void interpretEncoderMsg(const proto::EncoderPair &encoderMsg);
+    void interpretEncoderMsg(const nlohmann::json &encoderMsg, const std::map<std::string, ros::Publisher> &lookup);
 
-    void interpretXYTableMsg(const proto::XYTable &tableMsg);
+    void interpretXYTableMsg(const nlohmann::json &tableMsg, const std::map<std::string, ros::Publisher> &lookup);
 
-    void interpretIMUMsg(const proto::IMU &imuMsg);
+    void interpretIMUMsg(const nlohmann::json &imuMsg, const std::map<std::string, ros::Publisher> &lookup);
 
-    void interpretIncomingMsg(const google::protobuf::Any &msg, const std::map<std::string, ros::Publisher> &lookup);
+    void interpretIncomingMsg(const nlohmann::json &msg, const std::map<std::string, ros::Publisher> &lookup);
 }
 
 #endif //ROBORIO_RECEIVERS_H
