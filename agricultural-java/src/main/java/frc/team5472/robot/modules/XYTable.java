@@ -4,12 +4,18 @@ import org.json.JSONObject;
 
 public class XYTable {
 
+    private String name;
+
     private int xPosition;
     private int yPosition;
 
     private int xSetpoint;
     private int ySetpoint;
 
+
+    public XYTable(String name){
+        this.name = name;
+    }
 
     /**
      * Sets the table's setpoint to (x,y). Currently does nothing.

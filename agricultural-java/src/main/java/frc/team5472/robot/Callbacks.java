@@ -23,9 +23,9 @@ public class Callbacks {
     public Callbacks.MessageCallback driveCallback = new MessageCallback() {
         @Override
         public void run(JSONObject command) {
-            if (command.getString("name").equalsIgnoreCase("lead_drive"))
+            if (command.getString("name").equalsIgnoreCase(Consts.LEAD_DRIVE))
                 control.driveLead(command.getDouble("left"), command.getDouble("right"));
-            else if (command.getString("name").equalsIgnoreCase("trail_drive"))
+            else if (command.getString("name").equalsIgnoreCase(Consts.TRAIL_DRIVE))
                 control.driveTrail(command.getDouble("left"), command.getDouble("right"));
         }
     };
