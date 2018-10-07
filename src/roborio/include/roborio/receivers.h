@@ -14,11 +14,14 @@
 
 #include "roborio/json.hpp"
 
+#include <networktables/NetworkTable.h>
+#include <networktables/NetworkTableEntry.h>
+
 #include "roborio_msgs/EncoderPair.h"
 #include "roborio_msgs/XYTable.h"
 
 namespace receivers {
-    void interpretJoystickMsg(const nlohmann::json &msg, const std::map<std::string, ros::Publisher> &lookup);
+    void interpretJoystickMsg(const std::shared_ptr<nt::NetworkTable> table, const std::map<std::string, ros::Publisher> &lookup);
 
     void interpretEncoderMsg(const nlohmann::json &encoderMsg, const std::map<std::string, ros::Publisher> &lookup);
 

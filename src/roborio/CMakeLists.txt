@@ -52,5 +52,5 @@ add_executable(
         rio src/rio.cpp src/senders.cpp src/receivers.cpp)
 
 target_link_libraries(
-        rio ${catkin_LIBRARIES} ${zmq_LIBRARY} ${Protobuf_LIBRARIES} ${ntcore_LIBRARIES}
+        rio ${catkin_LIBRARIES} ${zmq_LIBRARY} ${Protobuf_LIBRARIES} ${ntcore_LIBRARIES} /usr/local/wpilib/lib/libwpiutil.so /usr/local/wpilib/lib/libntcore.so
 )

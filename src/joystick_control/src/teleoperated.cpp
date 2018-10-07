@@ -14,13 +14,13 @@
 void joystickDrive(const sensor_msgs::Joy::ConstPtr &joystick,
                    const ros::Publisher &leadPub,
                    const ros::Publisher &trailPub) {
-    double t = joystick->axes[3];
-    double y = joystick->axes[1];
+    double t = joystick->axes[2] / 2.0;
+    double y = -joystick->axes[1] / 2.0;
 
     double left = y + t;
     double right = y - t;
 
-    double trail = y - abs(t) * 0.5;
+    double trail = y;
 
     roborio_msgs::DifferentialDrive leading;
     leading.left = left;

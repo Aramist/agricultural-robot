@@ -2,6 +2,9 @@ package frc.team5472.robot.modules;
 
 import java.util.ArrayList;
 
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import org.json.JSONObject;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -30,21 +33,19 @@ public class Joy {
     	return stick.getRawButton(id);
     }
     
-    public JSONObject getMessage() {
-    	JSONObject json = new JSONObject();
-    	
-    	json.put("name", name);
-    	
-    	ArrayList<Float> axes = new ArrayList<Float>();
-        for (int i = 0; i < stick.getAxisCount(); i++)
-            axes.add((float) stick.getRawAxis(i));
-        json.put("axes", axes);
-        
-        ArrayList<Integer> buttons = new ArrayList<Integer>();
-        for (int i = 0; i < stick.getButtonCount(); i++)
-            buttons.add(stick.getRawButton(i) ? 1 : 0);
-        json.put("buttons", buttons);
+    public void sendMessage(NetworkTable table) {
 
-        return json;
+        double axes[] = new double[stick.getAxisCount()];
+        for(int i = 0; i < stick.getAxisCount(); i++)
+            axes[i] = stick.getRawAxis(i);
+
+        Integer buttons[] = new Integer[stick.getButtonCount()];
+        for(int i = 1; i < stick.getButtonCount() + 1; i++)
+            buttons[i-1] = stick.getRawButton(i) ? 1 : 0;
+
+        NetworkTableEntry axesEntry = table.getEntry(name + "/axes");
+        axesEntry.setDoubleArray(axes);
+        NetworkTableEntry buttonsEntry = table.getEntry(name + "/buttons");
+        buttonsEntry.setNumberArray(buttons);
     }
 }

@@ -54,28 +54,29 @@ int main(int argc, char **argv) {
     handle.getParam("/robot/params/xy_table_position", XY_TABLE_POSITION_TOPIC);
     handle.getParam("/robot/params/trail_imu", TRAIL_IMU_TOPIC);
 
-    try {
-        NetworkTable table();
+    auto ntinst = nt::NetworkTableInstance::GetDefault();
+//    ntinst.SetServer("10.54.72.2", 1735);
+    ntinst.StartClient("10.54.72.2", 1735);
+    auto table = ntinst.GetTable("/robot_control");
 
-    } catch(zmq::error_t err){
-        ROS_ERROR("Failed to open connection to RoboRIO");
-        ros::shutdown();
-    }
+    auto lead_diff = table->GetEntry("lead_diffdrive");
+    auto trail_diff = table->GetEntry("trail_diffdrive");
+
 
     ros::Subscriber diffDriveLeadControl = handle.subscribe<DifferentialDrive>(
             DIFFDRIVE_LEAD_TOPIC,
             2,
-            boost::bind(senders::sendDiffDriveLead, _1, &socket)
+            boost::bind(senders::sendDiffDriveLead, _1, lead_diff)
     );
     ros::Subscriber diffDriveTrailControl = handle.subscribe<DifferentialDrive>(
             DIFFDRIVE_TRAIL_TOPIC,
             2,
-            boost::bind(senders::sendDiffDriveTrail, _1, &socket)
+            boost::bind(senders::sendDiffDriveTrail, _1, trail_diff)
     );
     ros::Subscriber xyTableControl = handle.subscribe<XYTable>(
             XY_TABLE_TOPIC,
             1,
-            boost::bind(senders::sendXYTable, _1, &socket)
+            boost::bind(senders::sendXYTable, _1, lead_diff)
     );
 
     ros::Publisher joystickPublisher = handle.advertise<sensor_msgs::Joy>(
@@ -125,12 +126,16 @@ int main(int argc, char **argv) {
             trailIMUPublisher
     ));
 
+
+    while(!ntinst.IsConnected()){
+        continue;
+    }
+
+    ros::Rate joystickUpdate(20);
+
     while (ros::ok()) {
+        receivers::interpretJoystickMsg(table, publisherLookup);
+        joystickUpdate.sleep();
         ros::spinOnce();
-        zmq::message_t received;
-        socket.recv(&received);
-        std::string serializedJSON(static_cast<char *>(received.data()), received.size());
-        const auto toJSON = json::parse(serializedJSON);
-        receivers::interpretIncomingMsg(toJSON, publisherLookup);
     }
 }

@@ -8,15 +8,19 @@
 using json = nlohmann::json;
 
 namespace receivers {
-    void interpretJoystickMsg(const json &msg, const std::map<std::string, ros::Publisher> &lookup) {
+    void interpretJoystickMsg(const std::shared_ptr<nt::NetworkTable> table, const std::map<std::string, ros::Publisher> &lookup) {
+        auto axes = table->GetEntry("joystick/axes");
+        auto buttons = table->GetEntry("joystick/buttons");
+
         sensor_msgs::Joy joystick;
         joystick.header.frame_id = "";
         joystick.header.stamp = ros::Time::now();
 
-        for (const auto &axis : msg["axes"])
+        nt::ArrayRef<double> defDouble{0.0, 0.0, 0.0, 0.0};
+        for (const auto &axis : axes.GetDoubleArray(defDouble))
             joystick.axes.push_back(axis);
-
-        for (const auto &button : msg["buttons"])
+        nt::ArrayRef<int> defBool{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        for (const auto &button : buttons.GetBooleanArray(defBool))
             joystick.buttons.push_back(button);
 
         lookup.at("joystick").publish(joystick);

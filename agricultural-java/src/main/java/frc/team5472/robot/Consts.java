@@ -12,4 +12,14 @@ public class Consts {
     public static final String TABLE = "xy_table";
 
     public static final String DRIVE_JOYSTICK = "joy_drive";
+
+    public static final String AUGER = "auger";
+    public static final String GRIP = "grip";
+
+    public static final double AUGER_SPEED = 0.5;
+    public static final int AUGER_FORWARD = 4;
+    public static final int AUGER_REVERSE = 3;
+
+    public static final int GRIP_OPEN = 6;
+    public static final int GRIP_CLOSE = 5;
 }

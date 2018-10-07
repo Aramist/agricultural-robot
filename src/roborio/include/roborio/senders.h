@@ -7,17 +7,17 @@
 
 //#include <zmq.hpp>
 
-#include "roborio/json.hpp"
+#include <networktables/NetworkTableEntry.h>
 
 #include "roborio_msgs/DifferentialDrive.h"
 #include "roborio_msgs/XYTable.h"
 
 namespace senders {
-    nlohmann::json sendDiffDriveLead(const roborio_msgs::DifferentialDrive::ConstPtr &msg, zmq::socket_t *sock);
+    void sendDiffDriveLead(const roborio_msgs::DifferentialDrive::ConstPtr&, nt::NetworkTableEntry&);
 
-    nlohmann::json sendDiffDriveTrail(const roborio_msgs::DifferentialDrive::ConstPtr &msg, zmq::socket_t *sock);
+    void sendDiffDriveTrail(const roborio_msgs::DifferentialDrive::ConstPtr&, nt::NetworkTableEntry&);
 
-    nlohmann::json sendXYTable(const roborio_msgs::XYTable::ConstPtr &msg, zmq::socket_t *sock);
+    void sendXYTable(const roborio_msgs::XYTable::ConstPtr&, nt::NetworkTableEntry&);
 }
 
 #endif //ROBORIO_SENDERS_H

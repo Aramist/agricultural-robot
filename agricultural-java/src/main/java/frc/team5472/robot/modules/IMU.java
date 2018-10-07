@@ -1,5 +1,6 @@
 package frc.team5472.robot.modules;
 
+import edu.wpi.first.networktables.NetworkTable;
 import org.json.JSONObject;
 
 import com.kauailabs.navx.frc.AHRS;
@@ -9,27 +10,20 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class IMU {
     private AHRS navx;
-    private String frame;
+    private String name;
 
-    public IMU(String frame) {
+    public IMU(String name) {
         navx = new AHRS(SPI.Port.kMXP);
-        this.frame = frame;
+        this.name = name;
     }
 
-    public JSONObject getMessage() {
-    	JSONObject json = new JSONObject();
-    	
-    	json.put("name", frame);
-    	
-    	json.put("gyro_x", navx.getRawGyroX());
-    	json.put("gyro_y", navx.getRawGyroX());
-    	json.put("gyro_z", navx.getRawGyroX());
-    	
-    	json.put("accel_x", navx.getRawAccelX());
-    	json.put("accel_y", navx.getRawAccelX());
-    	json.put("accel_z", navx.getRawAccelX());
-    	
-    	SmartDashboard.putString("imu", json.toString());
-    	return json;
+    public void sendMessage(NetworkTable table) {
+        table.getEntry(name + "/gyro_x").setDouble(navx.getRawGyroX());
+        table.getEntry(name + "/gyro_y").setDouble(navx.getRawGyroY());
+        table.getEntry(name + "/gyro_z").setDouble(navx.getRawGyroZ());
+
+        table.getEntry(name + "/accel_x").setDouble(navx.getRawAccelX());
+        table.getEntry(name + "/accel_y").setDouble(navx.getRawAccelY());
+        table.getEntry(name + "/accel_x").setDouble(navx.getRawAccelZ());
     }
 }

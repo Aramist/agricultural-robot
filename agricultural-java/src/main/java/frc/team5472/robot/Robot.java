@@ -7,12 +7,14 @@
 
 package frc.team5472.robot;
 
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.TimedRobot;
 
 public class Robot extends TimedRobot {
 
     private static boolean disabled; //  Disabled by Jetson
-    private Communication comm;
+    private NetworkTable table;
 
     private Control control;
     private Callbacks callbacks;
@@ -21,8 +23,7 @@ public class Robot extends TimedRobot {
     public void robotInit() {
         this.control = new Control();
         this.callbacks = new Callbacks(control);
-
-        comm = new Communication(callbacks.driveCallback, callbacks.tableCallback);
+        table = NetworkTableInstance.getDefault().getTable("robot_control");
     }
 
     @Override
@@ -43,12 +44,11 @@ public class Robot extends TimedRobot {
     @Override
     public void teleopInit() {
         disabled = false;
-//        if(comm.)
     }
 
     @Override
     public void teleopPeriodic() {
-        control.sendMessages(comm);
+        control.sendMessages(table);
         control.joystickDrive();
     }
 
@@ -89,7 +89,5 @@ public class Robot extends TimedRobot {
 
     @Override
     public void testPeriodic() {
-    	control.sendMessages(comm);
-//    	control.joystickDrive();
     }
 }
