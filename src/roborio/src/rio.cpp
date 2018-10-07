@@ -4,7 +4,10 @@
  */
 
 #include <boost/bind.hpp>
-#include <zmq.hpp>
+//#include <zmq.hpp>
+
+#include <networktables/NetworkTable.h>
+#include <networktables/NetworkTableInstance.h>
 
 #include "ros/ros.h"
 #include "ros/console.h"
@@ -51,11 +54,9 @@ int main(int argc, char **argv) {
     handle.getParam("/robot/params/xy_table_position", XY_TABLE_POSITION_TOPIC);
     handle.getParam("/robot/params/trail_imu", TRAIL_IMU_TOPIC);
 
-    zmq::context_t context(1);
-    zmq::socket_t socket(context, ZMQ_PAIR);
-
     try {
-        socket.connect(ROBORIO_IP);
+        NetworkTable table();
+
     } catch(zmq::error_t err){
         ROS_ERROR("Failed to open connection to RoboRIO");
         ros::shutdown();

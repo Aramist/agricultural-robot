@@ -5,7 +5,7 @@
 #ifndef ROBORIO_SENDERS_H
 #define ROBORIO_SENDERS_H
 
-#include <zmq.hpp>
+//#include <zmq.hpp>
 
 #include "roborio/json.hpp"
 

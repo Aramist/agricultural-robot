@@ -5,6 +5,8 @@ include(FindProtobuf)
 
 add_compile_options(-std=c++11)
 
+list(APPEND CMAKE_MODULE_PATH /usr/local/share/)
+
 find_package(
         catkin REQUIRED COMPONENTS
         roscpp
@@ -13,13 +15,8 @@ find_package(
         roborio_msgs
 )
 
-find_package(
-        PkgConfig
-)
-
-find_package(
-        Protobuf REQUIRED
-)
+find_package(PkgConfig)
+find_package(ntcore)
 
 pkg_check_modules(PC_ZeroMQ QUIET zmq)
 
@@ -46,12 +43,14 @@ include_directories(
         include
         ${catkin_INCLUDE_DIRS}
         ${zmq_INCLUDE_DIRS}
-        ${Protobuf_INCLUDE_DIRS}
+        ${ntcore_INCLUDE_DIRS}
+        /usr/local/wpilib/include/ntcore
+        /usr/local/wpilib/include/wpiutil
 )
 
 add_executable(
-    rio src/rio.cpp src/senders.cpp src/receivers.cpp)
+        rio src/rio.cpp src/senders.cpp src/receivers.cpp)
 
 target_link_libraries(
-    rio ${catkin_LIBRARIES} ${zmq_LIBRARY} ${Protobuf_LIBRARIES}
+        rio ${catkin_LIBRARIES} ${zmq_LIBRARY} ${Protobuf_LIBRARIES} ${ntcore_LIBRARIES}
 )
