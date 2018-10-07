@@ -15,33 +15,29 @@ public class Control {
     private Joy stick;
 
     public Control() {
-        leadDrive = new Differential(3, 2, 4, 1, "lead_drive");
-        
+        leadDrive = new Differential(3, 2, 4, 1, Consts.LEAD_DRIVE);
+
         leadDrive.invert(false, true);
         leadDrive.invert(false, false);
-        
-        trailDrive = new Differential(7, 6, 8, 5, "trail_drive");
-        
+
+        trailDrive = new Differential(7, 6, 8, 5, Consts.TRAIL_DRIVE);
+
         trailDrive.invert(false, true);
         trailDrive.invert(false, false);
 
-        table = new XYTable();
+        table = new XYTable(Consts.TABLE);
 
-        trailImu = new IMU("trail_imu");
+        trailImu = new IMU(Consts.TRAIL_IMU);
 
-        stick = new Joy(0);
+        stick = new Joy(0, Consts.DRIVE_JOYSTICK);
     }
 
     public void sendMessages(Communication comms) {
-//        comms.send(Any.pack(frontDrive.getEncoders()));
-
-//        comms.send(Any.pack(rearDrive.getEncoders()));
-
+        comms.send(leadDrive.getEncoders());
+        comms.send(trailDrive.getEncoders());
         comms.send(trailImu.getMessage());
-
-//        comms.send(Any.pack(stick.getMessage()));
-
-//        comms.send(Any.pack(table.getPosition()));
+        comms.send(stick.getMessage());
+        comms.send(table.getPosition());
     }
 
     public void driveLead(double left, double right) {
@@ -55,13 +51,13 @@ public class Control {
     public void setTableSetpoint(int x, int y) {
         table.set(x, y);
     }
-    
+
     public void joystickDrive() {
-    	double y = -stick.getY() / 2.0;
-    	double tw = stick.getTwist() / 2.0;
-    	double l = y + tw;
-    	double r = y - tw;
-    	driveLead(l, r);
-    	driveTrail(y, y);
+        double y = -stick.getY() / 2.0;
+        double tw = stick.getTwist() / 2.0;
+        double l = y + tw;
+        double r = y - tw;
+        driveLead(l, r);
+        driveTrail(y, y);
     }
 }

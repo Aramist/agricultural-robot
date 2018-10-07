@@ -1,4 +1,10 @@
 .idea/
+
+.gradle/
+*.iml
+*.ipr
+*.iws
+
 cmake-build-debug/
 devel/
 logs/

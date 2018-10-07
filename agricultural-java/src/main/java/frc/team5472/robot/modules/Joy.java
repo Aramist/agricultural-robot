@@ -9,10 +9,12 @@ import edu.wpi.first.wpilibj.Joystick;
 public class Joy {
 
     private int id;
+    private String name;
     private Joystick stick;
 
-    public Joy(int id) {
+    public Joy(int id, String name) {
         this.id = id;
+        this.name = name;
         stick = new Joystick(id);
     }
 
@@ -31,7 +33,7 @@ public class Joy {
     public JSONObject getMessage() {
     	JSONObject json = new JSONObject();
     	
-    	json.put("name", String.format("joy_%d", id));
+    	json.put("name", name);
     	
     	ArrayList<Float> axes = new ArrayList<Float>();
         for (int i = 0; i < stick.getAxisCount(); i++)
