@@ -1,6 +1,7 @@
 package frc.team5472.robot;
 
 import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.wpilibj.Timer;
 import frc.team5472.robot.modules.*;
 
 public class Control {
@@ -14,6 +15,12 @@ public class Control {
 
     private Grip grip;
     private Auger auger;
+
+    private boolean augerForPrev = false;
+    private boolean augerRevPrev = false;
+
+    private boolean servoForPrev = false;
+    private boolean servoRevPrev = false;
 
     public Control() {
         leadDrive = new Differential(3, 2, 4, 1, Consts.LEAD_DRIVE);
@@ -63,18 +70,31 @@ public class Control {
         driveLead(l, r);
         driveTrail(y, y);
 
-        if(auger.getDirection() > 0 && stick.getButton(Consts.AUGER_FORWARD))
+
+        boolean augerFDiff = stick.getButton(Consts.AUGER_FORWARD) != augerForPrev;
+        boolean augerRDiff = stick.getButton(Consts.AUGER_REVERSE) != augerRevPrev;
+
+        augerForPrev = stick.getButton(Consts.AUGER_FORWARD);
+        augerRevPrev = stick.getButton(Consts.AUGER_REVERSE);
+
+        boolean servoFDiff = stick.getButton(Consts.GRIP_OPEN) != servoForPrev;
+        boolean servoRDiff = stick.getButton(Consts.GRIP_CLOSE) != servoRevPrev;
+
+        servoForPrev = stick.getButton(Consts.GRIP_OPEN);
+        servoRevPrev = stick.getButton(Consts.GRIP_CLOSE);
+
+        if (auger.getDirection() > 0 && stick.getButton(Consts.AUGER_FORWARD) && augerFDiff)
             auger.off();
-        else if(auger.getDirection() < 0 && stick.getButton(Consts.AUGER_REVERSE))
+        else if (auger.getDirection() < 0 && stick.getButton(Consts.AUGER_REVERSE) && augerRDiff)
             auger.off();
-        else if(stick.getButton(Consts.AUGER_FORWARD))
+        else if (stick.getButton(Consts.AUGER_FORWARD) && augerFDiff)
             auger.forward();
-        else if(stick.getButton(Consts.AUGER_REVERSE))
+        else if (stick.getButton(Consts.AUGER_REVERSE) && augerRDiff)
             auger.reverse();
 
-        if(stick.getButton(Consts.GRIP_CLOSE))
+        if (stick.getButton(Consts.GRIP_CLOSE) && servoFDiff)
             grip.close();
-        else if(stick.getButton(Consts.GRIP_OPEN))
+        else if (stick.getButton(Consts.GRIP_OPEN) && servoRDiff)
             grip.open();
     }
 }
